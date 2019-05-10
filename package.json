@@ -1,0 +1,11 @@
+{
+    "name": "Kanan Quest",
+    "version": "0.0.1",
+    "description": "A tiny MMORPG",
+    "dependencies": {
+        "bcrypt": "^3.0.6",
+        "express": "^4.15.2",
+        "socket.io": "^2.2.0",
+        "sqlite3": "^4.0.7"
+    }
+}

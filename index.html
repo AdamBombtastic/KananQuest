@@ -1,0 +1,165 @@
+<html>
+<head>
+    <style>
+        body {
+            background: #EEEEFF;
+        }
+        #loginContainer {
+            margin: 0 auto;
+            text-align: center;
+            font-family: sans-serif;
+            color: #111111;
+            border: 1px solid #9999BB;
+            box-shadow: #9999BB 1px 1px;
+            border-radius: 4px;
+            width: 400px;
+            height: auto;
+            padding: 20px;
+            background: #FFF;            
+        }
+        #loginContainer input {
+            display:block;
+            margin: 4px auto;
+            padding: 4px;
+            
+        }
+        #loginContainer #loginBtn {
+            display:block;
+            margin: 4px auto;
+            width: 181px;
+        }
+        #loginContainer #registerLink {
+            display:block;
+            margin: 4px auto;
+            width: 181px;
+        }
+        #loginCOntainer #errorMessage {
+            color: red;
+        }
+        #chatContainer {
+            position: absolute;
+            width: 640px;
+            height: 130px;
+            top: 490px;
+            left: 10px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin: 0 0;
+            padding: 0;
+        }
+        #chatContainer #chatArea{
+            display:inline-block;
+            background: #FFFFFF;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 5px;
+            width: 630px;
+            height: 90px;
+        }
+        #chatContainer #chatInput {
+            margin: 5px 5px;
+            width: 575px;
+            background: #FFFFFF;
+            border:none;
+            border-radius: 5px;
+            box-shadow: none;
+            
+        }
+        #myCanvas {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .ui-panel {
+            background: #FFFFFF;
+            opacity: 0.8;
+            border-radius: 5px;
+            margin: 20px;
+            font-family: sans-serif;
+        }
+        .ui-panel-header {
+            background: #222;
+            color: #FFF;
+            font-size: 20px;
+            line-height: 25px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding-left: 10px !important;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+            box-sizing: border-box;         /* Opera/IE 8+ */
+        }
+        .ui-panel-header-close {
+            background: red;
+            border-radius: 15px;
+            opacity: 1;
+        }
+        .ui-panel-header-close:hover {
+            opacity: 0.5;
+        }
+        .ui-inv-item {
+            position: absolute;
+            background: #555;
+            color: white;
+            font-size: 12px;
+            border: 1px #111 solid;
+            border-radius: 5px;
+            padding: 0px;
+            margin: 0px;
+            opacity: 0.8;
+        }
+        .ui-inv-item:hover {
+            opacity:1;
+        }
+        .ui-inv-item-container {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+        }
+        .ui-inv-item p {
+            display:block;
+            padding: 0px;
+            width: 100%;
+            height:fit-content;
+            text-align: center;
+            margin: 0;
+        }
+        .ui-submit-btn {
+            background: #111;
+            border-radius: 5px;
+            opacity: 0.8;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            width: 60px;
+            height: 20px;
+            padding:10px;
+
+        }
+        .ui-submit-btn:hover {
+            opacity: 1;
+        }
+        
+    </style>
+</head>    
+<body>
+    <canvas id="myCanvas" width="640" height="480" z-index="0" hidden></canvas>
+    <div id="chatContainer" z-index="1" hidden>
+        <textarea id="chatArea" disabled></textarea>
+        <input type="text" id="chatInput"/><button id="chatBtn" onclick="doChatMessage(true);">SEND</button>
+    </div>
+    <div id="loginContainer"> 
+        <h2>Kanan Quest</h2>
+        <input type="text" id="username" placeholder="username"/>
+        <input type="password" id="password" placeholder="password"/>
+        <button id="loginBtn" onclick="tryLogin()">Login</button>
+        <button id="registerLink" onclick="tryRegister()">Register</button>
+        <p id="errorMessage"></p>
+    </div>
+</body>
+<script type="text/javascript" src="UI.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script type="text/javascript" src="client.js"></script>
+<script type="text/javascript" src="monsters.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>
